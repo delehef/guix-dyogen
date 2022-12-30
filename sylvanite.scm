@@ -123,7 +123,7 @@
    (build-system cargo-build-system)
    (arguments
     `(#:install-source? #f
-      :cargo-inputs
+      #:cargo-inputs
       ("rust-clap" ,rust-clap-3)
       ("rust-eyre" ,rust-eyre-0.6)
       ("rust-lazy-static" ,rust-lazy-static-1)
