@@ -124,14 +124,14 @@
    (arguments
     `(#:install-source? #f
       #:cargo-inputs
-      ("rust-clap" ,rust-clap-3)
-      ("rust-eyre" ,rust-eyre-0.6)
-      ("rust-lazy-static" ,rust-lazy-static-1)
-      ("rust-log" ,rust-log-0.4)
-      ("rust-maplit" ,rust-maplit-1)
-      ("rust-rayon" ,rust-rayon-1)
-      ("rust-smartstring" ,rust-smartstring-0.2)
-      ("rust-stderrlog" ,rust-stderrlog-0.4)))
+      (("rust-clap" ,rust-clap-3)
+       ("rust-eyre" ,rust-eyre-0.6)
+       ("rust-lazy-static" ,rust-lazy-static-1)
+       ("rust-log" ,rust-log-0.4)
+       ("rust-maplit" ,rust-maplit-1)
+       ("rust-rayon" ,rust-rayon-1)
+       ("rust-smartstring" ,rust-smartstring-0.2)
+       ("rust-stderrlog" ,rust-stderrlog-0.4))))
    (native-inputs (list sqlite))
    (synopsis "Manipulate newick trees")
    (description "A tool suite to manipulate newick-formatted phylogenetic trees")
