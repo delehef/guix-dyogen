@@ -52,7 +52,7 @@
 (define-public sylvanite
   (package
    (name "sylvanite")
-   (version "1.0.1")
+   (version "1.1.0")
    (source
     (origin
      (method git-fetch)
@@ -60,7 +60,7 @@
       (git-reference
        (url "https://github.com/delehef/sylvanite")
        (commit (string-append "v" version))))
-     (sha256 (base32 "1ja4r7rbqw5ngdbjrwbzwnbpp32iiavpi6yjn52lysv565pakp65"))))
+     (sha256 (base32 "02li4050yif6lqrvkndkbzg9mi1jrbdb1bshci21znrrg8mk7mii"))))
    (build-system cargo-build-system)
    (arguments
     `(#:install-source? #f
@@ -111,7 +111,7 @@
 (define-public crisprs
   (package
    (name "crisprs")
-   (version "1.1.0")
+   (version "1.0.3")
    (source
     (origin
      (method git-fetch)
@@ -119,7 +119,7 @@
       (git-reference
        (url "https://github.com/delehef/crisprs")
        (commit (string-append "v" version))))
-     (sha256 (base32 "02li4050yif6lqrvkndkbzg9mi1jrbdb1bshci21znrrg8mk7mii"))))
+     (sha256 (base32 "096m33h27dkwrhcy0jqnqy5m5m2xx5d6f3i4a504i46k1j46snlc"))))
    (build-system cargo-build-system)
    (arguments
     `(#:install-source? #f
@@ -133,7 +133,7 @@
        ("rust-smartstring" ,rust-smartstring-0.2)
        ("rust-stderrlog" ,rust-stderrlog-0.4))))
    (native-inputs (list sqlite))
-   (synopsis "Manipulate newick trees")
-   (description "A tool suite to manipulate newick-formatted phylogenetic trees")
+   (synopsis "Tools to manipulate sequences")
+   (description "A tool suite to manipulate FASTA sequences")
    (home-page "https://github.com/delehef/chainsaw")
    (license cecill)))
