@@ -111,7 +111,7 @@
 (define-public crisprs
   (package
    (name "crisprs")
-   (version "1.0.3")
+   (version "1.1.0")
    (source
     (origin
      (method git-fetch)
@@ -119,7 +119,7 @@
       (git-reference
        (url "https://github.com/delehef/crisprs")
        (commit (string-append "v" version))))
-     (sha256 (base32 "096m33h27dkwrhcy0jqnqy5m5m2xx5d6f3i4a504i46k1j46snlc"))))
+     (sha256 (base32 "02li4050yif6lqrvkndkbzg9mi1jrbdb1bshci21znrrg8mk7mii"))))
    (build-system cargo-build-system)
    (arguments
     `(#:install-source? #f
