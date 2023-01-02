@@ -52,7 +52,7 @@
 (define-public sylvanite
   (package
    (name "sylvanite")
-   (version "1.1.0")
+   (version "1.2.0")
    (source
     (origin
      (method git-fetch)
@@ -60,7 +60,7 @@
       (git-reference
        (url "https://github.com/delehef/sylvanite")
        (commit (string-append "v" version))))
-     (sha256 (base32 "02li4050yif6lqrvkndkbzg9mi1jrbdb1bshci21znrrg8mk7mii"))))
+     (sha256 (base32 "0iknlfzmjlaygis1bxri0dcl6j53aqpxc2kyass6wwmkf2i9714h"))))
    (build-system cargo-build-system)
    (arguments
     `(#:install-source? #f
@@ -85,7 +85,7 @@
 (define-public chainsaw
   (package
    (name "chainsaw")
-   (version "1.0.0")
+   (version "1.1.1")
    (source
     (origin
      (method git-fetch)
@@ -93,13 +93,13 @@
       (git-reference
        (url "https://github.com/delehef/chainsaw")
        (commit (string-append "v" version))))
-     (sha256 (base32 "0asg0arah9zsyi9ghy45g8fpzq056ldxyckjxipff35m52zd3kaf"))))
+     (sha256 (base32 "0k80wkkdvi1i43a3k2nv4jbaya31xy91laxkwbf7rl056id48fzz"))))
    (build-system cargo-build-system)
    (arguments
     `(#:install-source? #f
       #:cargo-inputs
       (("rust-anyhow" ,rust-anyhow-1)
-       ("rust-clap" ,rust-clap-2)
+       ("rust-clap" ,rust-clap-3)
        ("rust-newick" ,rust-newick-0.5)
        ("rust-rusqlite" ,rust-rusqlite-0.26))))
    (native-inputs (list sqlite))
