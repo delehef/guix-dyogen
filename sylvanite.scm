@@ -85,7 +85,7 @@
 (define-public chainsaw
   (package
    (name "chainsaw")
-   (version "1.4.0")
+   (version "1.5.0")
    (source
     (origin
      (method git-fetch)
@@ -93,7 +93,7 @@
       (git-reference
        (url "https://github.com/delehef/chainsaw")
        (commit (string-append "v" version))))
-     (sha256 (base32 "1znvkm0kl4dyb16zq51wdhaasy26rfan4g5gd5q9amr1n3bjg2mf"))))
+     (sha256 (base32 "02v894fkjdgkwdkgd6db4m8s1cbrlyhvhcm1kdzjggv9bjs97w05"))))
    (build-system cargo-build-system)
    (arguments
     `(#:install-source? #f
