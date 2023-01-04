@@ -9,13 +9,13 @@
 
 (define-public agora
   (package (name "AGORA")
-           (version "1.2")
+           (version "1.2.1")
            (source (origin
                     (method git-fetch)
                     (uri (git-reference
                           (url "https://github.com/delehef/Agora")
-                          (commit "0e19722e2d3f8ac705c41932936948dd04247bf4")))
-                    (sha256 (base32 "0cy91ww9jxhr391dp5z2h8x5vxfk8plggi0r03l7bcbqkx003gcn"))))
+                          (commit "7d3ecf36b67820a4af7cceacd7c4cf2fb736e7f6")))
+                    (sha256 (base32 "1kpnilkqh2xhbfhg8w6z63r135wji1ifcv9hqqsm0q5nkiz4j451"))))
            (build-system python-build-system)
            (synopsis "AGORA stands for “Algorithm for Gene Order Reconstruction in Ancestors” and was developed by Matthieu Muffato in the DYOGEN Laboratory at the École normale supérieure in Paris in 2008.")
            (description "Algorithm For Gene Order Reconstruction in Ancestors")
