@@ -52,7 +52,7 @@
 (define-public sylvanite
   (package
    (name "sylvanite")
-   (version "1.2.0")
+   (version "1.2.1")
    (source
     (origin
      (method git-fetch)
@@ -60,7 +60,7 @@
       (git-reference
        (url "https://github.com/delehef/sylvanite")
        (commit (string-append "v" version))))
-     (sha256 (base32 "0iknlfzmjlaygis1bxri0dcl6j53aqpxc2kyass6wwmkf2i9714h"))))
+     (sha256 (base32 "1pznz9g08an9wd2a40pkk5fif5r8a5d5sjphnh38kn883ig5p6hy"))))
    (build-system cargo-build-system)
    (arguments
     `(#:install-source? #f
