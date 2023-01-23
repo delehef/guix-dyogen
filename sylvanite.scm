@@ -7,41 +7,41 @@
   #:use-module (gnu packages sqlite)
   #:use-module (gnu packages crates-io))
 
-(define-public rust-newick-0.5
+(define-public rust-newick-0.7
   (package
    (name "rust-newick")
-   (version "0.5.0")
+   (version "0.7.0")
    (source
     (origin
      (method url-fetch)
      (uri (crate-uri "newick" version))
      (file-name (string-append name "-" version ".tar.gz"))
      (sha256
-      (base32 "0ckp8n3yidq9w99zvafr26mdcc9xxxas1k5rsivj6knw9amnl8mv"))))
+      (base32 "1h82ss92s7dm6875vbigjzcmncf0cwz0gpvzgvb0m65vvbz8zml6"))))
    (build-system cargo-build-system)
    (arguments
     `(#:skip-build? #t
       #:cargo-inputs
       (("rust-pest" ,rust-pest-2)
        ("rust-pest-derive" ,rust-pest-derive-2)
-       ("rust-sorbus" ,rust-sorbus-0.5)
+       ("rust-sorbus" ,rust-sorbus-0.8)
        ("rust-thiserror" ,rust-thiserror-1))))
    (home-page "https://github.com/delehef/newick")
    (synopsis "Parse, manipulate & write newick-formatted phylogenetic tree")
    (description "A library to read, edit and write newick-formatted trees in rust")
    (license cecill-c)))
 
-(define-public rust-sorbus-0.5
+(define-public rust-sorbus-0.8
   (package
    (name "rust-sorbus")
-   (version "0.5.0")
+   (version "0.8.0")
    (source
     (origin
      (method url-fetch)
      (uri (crate-uri "sorbus" version))
      (file-name (string-append name "-" version ".tar.gz"))
      (sha256
-      (base32 "0dlcbdqn9qf8kmc3n7308fql0avwxf7ll9snaz4pzb0a4mk7hjg1"))))
+      (base32 "0hhv7fj136vi514c30qiy2r8gbr3hshpm3dqfdwibjsxgxvzcnkw"))))
    (build-system cargo-build-system)
    (arguments `(#:skip-build? #t))
    (home-page "https://github.com/delehef/sorbus")
@@ -49,10 +49,127 @@
    (description "A library to manipulate n-ary trees in rust")
    (license cecill-c)))
 
+(define-public rust-clap-verbosity-flag-1
+  (package
+   (name "rust-buche")
+   (version "1.0.1")
+   (source
+    (origin
+     (method url-fetch)
+     (uri (crate-uri "clap-verbosity-flag" version))
+     (file-name (string-append name "-" version ".tar.gz"))
+     (sha256
+      (base32 "0b6402ng8fcc5f0ir61xif1c58f1rvw0b8sm2lb8wbq8830gjdh6"))))
+   (build-system cargo-build-system)
+   (arguments `(#:skip-build? #t))
+   (home-page "https://crates.io/crates/clap-verbosity-flag")
+   (synopsis "Easily add a `--verbose` flag to CLIs using Structopt")
+   (description "Easily add a --verbose flag to CLIs using clap")
+   (license asl2.0)))
+
+(define-public rust-buche-0.7
+  (package
+   (name "rust-buche")
+   (version "0.7.0")
+   (source
+    (origin
+     (method url-fetch)
+     (uri (crate-uri "buche" version))
+     (file-name (string-append name "-" version ".tar.gz"))
+     (sha256
+      (base32 "1j9j10wl2mf1d5d8w0lnqrzb8hhc1kijag4lgkc3lcbzhgyi5xfc"))))
+   (build-system cargo-build-system)
+   (arguments `(#:skip-build? #t))
+   (home-page "https://github.com/delehef/buche")
+   (synopsis "Logger that logs to stderr based on verbosity specified")
+   (description "A fork of stderrlog, a logger that aims to provide a simple case of env_logger that just logs to stderr based on verbosity.")
+   (license cecill-c)))
+
+(define-public rust-petname-1
+  (package
+   (name "rust-petname")
+   (version "1.1.3")
+   (source
+    (origin
+     (method url-fetch)
+     (uri (crate-uri "petname" version))
+     (file-name (string-append name "-" version ".tar.gz"))
+     (sha256
+      (base32 "0l3rvz6ww33v7h1cwgqcpklb00rbygyi3c2np2z50dcnc16idr7w"))))
+   (build-system cargo-build-system)
+   (arguments
+    `(#:skip-build? #t
+      #:cargo-inputs
+      (("rust-clap" ,rust-clap-3)
+       ("rust-rand" ,rust-rand-0.8.5)
+       ("rust-iterrools" ,rust-itertools-0.10))))
+   (home-page "https://github.com/delehef/buche")
+   (synopsis "Logger that logs to stderr based on verbosity specified")
+   (description "A fork of stderrlog, a logger that aims to provide a simple case of env_logger that just logs to stderr based on verbosity.")
+   (license cecill-c)))
+
+ (define-public rust-rand-0.8.5
+  (package
+    (name "rust-rand")
+    (version "0.8.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (crate-uri "rand" version))
+       (file-name (string-append name "-" version ".tar.gz"))
+       (sha256
+        (base32 "013l6931nn7gkc23jz5mm3qdhf93jjf0fg64nz2lp4i51qd8vbrl"))))
+    (build-system cargo-build-system)
+    (arguments
+     `(#:skip-build? #t
+       #:cargo-inputs
+       (("rust-libc" ,rust-libc-0.2)
+        ("rust-log" ,rust-log-0.4)
+        ("rust-packed-simd-2" ,rust-packed-simd-2-0.3)
+        ("rust-rand-chacha" ,rust-rand-chacha-0.3)
+        ("rust-rand-core" ,rust-rand-core-0.6)
+        ("rust-rand-hc" ,rust-rand-hc-0.3)
+        ("rust-serde" ,rust-serde-1))))
+    (home-page "https://crates.io/crates/rand")
+    (synopsis "Random number generators and other randomness functionality")
+    (description
+     "Rand provides utilities to generate random numbers, to convert them to
+useful types and distributions, and some randomness-related algorithms.")
+    (license (list expat asl2.0))))
+
+(define-public rust-syntesuite
+  (package
+   (name "rust-syntesuite")
+   (version "0.1.0")
+   (source
+    (origin
+     (method url-fetch)
+     (uri (crate-uri "syntesuite" version))
+     (file-name (string-append name "-" version ".tar.gz"))
+     (sha256
+      (base32 "0kk8z5jglfx78mzsx1df90v8kpnb001f1wv7hnchsax2mcrz4ikv"))))
+   (build-system cargo-build-system)
+   (arguments 
+    `(#:skip-build? #t
+      #:cargo-inputs
+      (("rust-anyhow" ,rust-anyhow-1)
+       ("rust-colored" ,rust-colored-2)
+       ("rust-flate2" ,rust-flate2-1)
+       ("rust-log" ,rust-log-0.4)
+       ("rust-petname" ,rust-petname-1)
+       ("rust-regex" ,rust-regex-1)
+       ("rust-rusqlite" ,rust-rusqlite-0.26)
+       ("rust-thiserror" ,rust-thiserror-1))))
+   (home-page "https://github.com/delehef/syntesuite")
+   (synopsis "TODO")
+   (description "TODO")
+   (license cecill-c)))
+
+
 (define-public sylvanite
   (package
    (name "sylvanite")
-   (version "1.2.1")
+   (version "1.5.1")
    (source
     (origin
      (method git-fetch)
@@ -60,22 +177,24 @@
       (git-reference
        (url "https://github.com/delehef/sylvanite")
        (commit (string-append "v" version))))
-     (sha256 (base32 "1pznz9g08an9wd2a40pkk5fif5r8a5d5sjphnh38kn883ig5p6hy"))))
+     (sha256 (base32 "1jksjkz3rr6ilf0wbi67sav5q7x76jiygw1jgd0zhrii7s3pgfyr"))))
    (build-system cargo-build-system)
    (arguments
     `(#:install-source? #f
       #:cargo-inputs
       (("rust-anyhow" ,rust-anyhow-1)
        ("rust-atty" ,rust-atty-0.2)
+       ("rust-buche" ,rust-buche-0.7)
        ("rust-clap" ,rust-clap-3)
+       ("rust-clap-verbosity-flag" ,rust-clap-verbosity-flag-1)
+       ("rust-colored" ,rust-colored-2)
        ("rust-indicatif" ,rust-indicatif-0.16)
        ("rust-itertools" ,rust-itertools-0.10)
        ("rust-log" ,rust-log-0.4)
-       ("rust-newick" ,rust-newick-0.5)
+       ("rust-newick" ,rust-newick-0.7)
        ("rust-ordered-float" ,rust-ordered-float-2)
        ("rust-rayon" ,rust-rayon-1)
-       ("rust-rusqlite" ,rust-rusqlite-0.26)
-       ("rust-stderrlog" ,rust-stderrlog-0.4))))
+       ("rust-syntesuite" ,rust-syntesuite))))
    (native-inputs (list sqlite))
    (synopsis "Gene trees inference from syntenic & sequence information")
    (description "Sylvanite rebuilds syntenically-credible gene family trees from sequences and syntenic information.")
@@ -85,7 +204,7 @@
 (define-public chainsaw
   (package
    (name "chainsaw")
-   (version "1.5.0")
+   (version "1.8.4")
    (source
     (origin
      (method git-fetch)
@@ -93,7 +212,7 @@
       (git-reference
        (url "https://github.com/delehef/chainsaw")
        (commit (string-append "v" version))))
-     (sha256 (base32 "02v894fkjdgkwdkgd6db4m8s1cbrlyhvhcm1kdzjggv9bjs97w05"))))
+     (sha256 (base32 "1v7hi02dlh2mwjq0wbj89pl8y5bkyfkn8n8qd7vch2il0b5xkcm6"))))
    (build-system cargo-build-system)
    (arguments
     `(#:install-source? #f
@@ -101,8 +220,9 @@
       (("rust-anyhow" ,rust-anyhow-1)
        ("rust-clap" ,rust-clap-3)
        ("rust-itertools" ,rust-itertools-0.10)
-       ("rust-newick" ,rust-newick-0.5)
-       ("rust-rusqlite" ,rust-rusqlite-0.26))))
+       ("rust-newick" ,rust-newick-0.7)
+       ("rust-rusqlite" ,rust-rusqlite-0.26)
+       ("rust-syntesuite" ,rust-syntesuite))))
    (native-inputs (list sqlite))
    (synopsis "Manipulate newick trees")
    (description "A tool suite to manipulate newick-formatted phylogenetic trees")
