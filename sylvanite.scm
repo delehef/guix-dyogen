@@ -204,7 +204,7 @@ useful types and distributions, and some randomness-related algorithms.")
 (define-public chainsaw
   (package
    (name "chainsaw")
-   (version "1.8.4")
+   (version "1.9.1")
    (source
     (origin
      (method git-fetch)
@@ -212,7 +212,7 @@ useful types and distributions, and some randomness-related algorithms.")
       (git-reference
        (url "https://github.com/delehef/chainsaw")
        (commit (string-append "v" version))))
-     (sha256 (base32 "1v7hi02dlh2mwjq0wbj89pl8y5bkyfkn8n8qd7vch2il0b5xkcm6"))))
+     (sha256 (base32 "14lf95qk0663ypfk9nqrjksjbjcvb3azydg7n6ny6kw5s2752l2x"))))
    (build-system cargo-build-system)
    (arguments
     `(#:install-source? #f
