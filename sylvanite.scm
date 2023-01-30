@@ -169,7 +169,7 @@ useful types and distributions, and some randomness-related algorithms.")
 (define-public sylvanite
   (package
    (name "sylvanite")
-   (version "1.5.1")
+   (version "1.5.2")
    (source
     (origin
      (method git-fetch)
@@ -177,7 +177,7 @@ useful types and distributions, and some randomness-related algorithms.")
       (git-reference
        (url "https://github.com/delehef/sylvanite")
        (commit (string-append "v" version))))
-     (sha256 (base32 "1jksjkz3rr6ilf0wbi67sav5q7x76jiygw1jgd0zhrii7s3pgfyr"))))
+     (sha256 (base32 "0z3ria29mjp87g5qb3c0sk4x7szarhj25zl1fmdc2x0fycgwmnrp"))))
    (build-system cargo-build-system)
    (arguments
     `(#:install-source? #f
