@@ -22,3 +22,19 @@
            (home-page "https://github.com/DyogenIBENS/Agora")
            (license gpl3+)
            (propagated-inputs (list python-psutil))))
+
+          
+(define-public genomicus-tools
+  (package (name "GenomicusTools")
+           (version "1.0.0")
+           (source (origin
+                    (method git-fetch)
+                    (uri (git-reference
+                          (url "https://github.com/delehef/genomicus-tools")
+                          (commit "3487bc757140f89efd8adb476230b675404c0ea6")))
+                    (sha256 (base32 "07lwvrl8sr8mcbgrd116yrydxkkjy6ibd6643k5hw0z8cj4zla6g"))))
+           (build-system python-build-system)
+           (synopsis "TODO")
+           (description "TODO")
+           (home-page "https://github.com/delehef/genomicus-tools")
+           (license gpl3+)))
