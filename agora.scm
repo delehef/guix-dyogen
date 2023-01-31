@@ -31,8 +31,8 @@
                     (method git-fetch)
                     (uri (git-reference
                           (url "https://github.com/delehef/genomicus-tools")
-                          (commit "3487bc757140f89efd8adb476230b675404c0ea6")))
-                    (sha256 (base32 "07lwvrl8sr8mcbgrd116yrydxkkjy6ibd6643k5hw0z8cj4zla6g"))))
+                          (commit "57d713314a2b8e7833bd86e8d6062d4ba2e9fe6f")))
+                    (sha256 (base32 "0lgjmj8v4dh8g0rwg8n0nyijksajy9y03scjns3dkqrmv50iz8lw"))))
            (build-system python-build-system)
            (synopsis "TODO")
            (description "TODO")
