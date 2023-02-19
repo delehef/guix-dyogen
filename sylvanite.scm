@@ -7,6 +7,46 @@
   #:use-module (gnu packages sqlite)
   #:use-module (gnu packages crates-io))
 
+(define-public rust-aa_similarity-0.1
+  (package
+   (name "rust-aa_similarity")
+   (version "0.1.0")
+   (source
+    (origin
+     (method url-fetch)
+     (uri (crate-uri "aa_similarity" version))
+     (file-name (string-append name "-" version ".tar.gz"))
+     (sha256
+      (base32 "1j8gkdysf2f5g7b37z76lad4xinr7pnbgnbac4hcahlgvd7ip6nw"))))
+   (build-system cargo-build-system)
+   (arguments
+    `(#:skip-build? #t
+      #:cargo-inputs
+      (("rust-nom" ,rust-nom-6))))
+   (home-page "https://github.com/jeanmanguy/amino-acids")
+   (synopsis "Substitution matrices for use in protein sequence analysis and alignment.")
+   (description "Substitution matrices for use in protein sequence analysis and alignment.")
+   (license (list expat asl2.0))))
+
+(define-public rust-aa_name-0.1
+  (package
+   (name "rust-aa_name")
+   (version "0.1.4")
+   (source
+    (origin
+     (method url-fetch)
+     (uri (crate-uri "aa-name" version))
+     (file-name (string-append name "-" version ".tar.gz"))
+     (sha256
+      (base32 "0najbpsb2plyh13i5pwg2k53kz0h6wwqpm87hf4jpqkgqx64fkdf"))))
+   (build-system cargo-build-system)
+   (arguments
+    `(#:skip-build? #t))
+   (home-page "https://github.com/jeanmanguy/amino-acids")
+   (synopsis "Basic enum for amino acid names.")
+   (description "Basic enum for amino acid names.")
+   (license (list expat asl2.0))))
+
 (define-public rust-newick-0.7
   (package
    (name "rust-newick")
@@ -232,7 +272,7 @@ useful types and distributions, and some randomness-related algorithms.")
 (define-public crisprs
   (package
    (name "crisprs")
-   (version "1.0.3")
+   (version "1.1.3")
    (source
     (origin
      (method git-fetch)
@@ -240,19 +280,21 @@ useful types and distributions, and some randomness-related algorithms.")
       (git-reference
        (url "https://github.com/delehef/crisprs")
        (commit (string-append "v" version))))
-     (sha256 (base32 "096m33h27dkwrhcy0jqnqy5m5m2xx5d6f3i4a504i46k1j46snlc"))))
+     (sha256 (base32 "1dz5mhgsk29h40na5a6ps32y2jsangjzjm5ypl67izbxjknh05n1"))))
    (build-system cargo-build-system)
    (arguments
     `(#:install-source? #f
       #:cargo-inputs
-      (("rust-clap" ,rust-clap-3)
+      (("rust-aa_similarity" ,rust-aa_similarity-0.1)
+       ("rust-aa_name",rust-aa_name-0.1)
+       ("rust-clap" ,rust-clap-3)
        ("rust-eyre" ,rust-eyre-0.6)
        ("rust-lazy-static" ,rust-lazy-static-1)
        ("rust-log" ,rust-log-0.4)
        ("rust-maplit" ,rust-maplit-1)
        ("rust-rayon" ,rust-rayon-1)
        ("rust-smartstring" ,rust-smartstring-0.2)
-       ("rust-stderrlog" ,rust-stderrlog-0.4))))
+       ("rust-buche" ,rust-buche-0.7))))
    (native-inputs (list sqlite))
    (synopsis "Tools to manipulate sequences")
    (description "A tool suite to manipulate FASTA sequences")
