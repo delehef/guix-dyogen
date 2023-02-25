@@ -26,13 +26,13 @@
           
 (define-public genomicus-tools
   (package (name "GenomicusTools")
-           (version "1.0.0")
+           (version "1.1.0")
            (source (origin
                     (method git-fetch)
                     (uri (git-reference
                           (url "https://github.com/delehef/genomicus-tools")
-                          (commit "57d713314a2b8e7833bd86e8d6062d4ba2e9fe6f")))
-                    (sha256 (base32 "0lgjmj8v4dh8g0rwg8n0nyijksajy9y03scjns3dkqrmv50iz8lw"))))
+                          (commit "5f7c7b0a18e5c5216301c30c9eee1eb2148f9bed")))
+                    (sha256 (base32 "1n8lxy2jvrp52j3bayz3cyify0fm4swk76w76fc7m4f8xal5y2li"))))
            (build-system python-build-system)
            (synopsis "TODO")
            (description "TODO")
