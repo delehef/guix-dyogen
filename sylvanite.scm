@@ -245,14 +245,14 @@ useful types and distributions, and some randomness-related algorithms.")
 (define-public rust-chainsaw-1
   (package
    (name "chainsaw")
-   (version "1.11.1")
+   (version "1.11.2")
    (source
     (origin
      (method url-fetch)
      (uri (crate-uri "chainsaw" version))
      (file-name (string-append name "-" version ".tar.gz"))
      (sha256
-      (base32 "15a62p957pl0y1jq5j9pwynhdb6nwmbbrzrbjjm35fzcyj4nm0xd"))))
+      (base32 "0nx4p48qz0d6izd93aka3av29dqvsjwyil2qhhx0rj7k9lglq9h7"))))
    (build-system cargo-build-system)
    (arguments
     `(#:cargo-inputs
