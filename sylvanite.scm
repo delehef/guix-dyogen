@@ -50,14 +50,14 @@
 (define-public rust-newick-0.7
   (package
    (name "rust-newick")
-   (version "0.7.0")
+   (version "0.7.1")
    (source
     (origin
      (method url-fetch)
      (uri (crate-uri "newick" version))
      (file-name (string-append name "-" version ".tar.gz"))
      (sha256
-      (base32 "1h82ss92s7dm6875vbigjzcmncf0cwz0gpvzgvb0m65vvbz8zml6"))))
+      (base32 "1dzssj2n00vz7admra3m5qm181aadx7w83c1s5r70gjqdj2p2k9x"))))
    (build-system cargo-build-system)
    (arguments
     `(#:skip-build? #t
@@ -91,7 +91,7 @@
 
 (define-public rust-clap-verbosity-flag-1
   (package
-   (name "rust-buche")
+   (name "rust-clap-verbosity-flag")
    (version "1.0.1")
    (source
     (origin
@@ -180,14 +180,14 @@ useful types and distributions, and some randomness-related algorithms.")
 (define-public rust-syntesuite
   (package
    (name "rust-syntesuite")
-   (version "0.1.0")
+   (version "0.2.1")
    (source
     (origin
      (method url-fetch)
      (uri (crate-uri "syntesuite" version))
      (file-name (string-append name "-" version ".tar.gz"))
      (sha256
-      (base32 "0kk8z5jglfx78mzsx1df90v8kpnb001f1wv7hnchsax2mcrz4ikv"))))
+      (base32 "0ljsw898b9sxwk6idir5s6l3wandimhhkc9lg6f4hrswkv43y5gk"))))
    (build-system cargo-build-system)
    (arguments 
     `(#:skip-build? #t
@@ -209,7 +209,7 @@ useful types and distributions, and some randomness-related algorithms.")
 (define-public sylvanite
   (package
    (name "sylvanite")
-   (version "1.5.2")
+   (version "1.5.4")
    (source
     (origin
      (method git-fetch)
@@ -217,7 +217,7 @@ useful types and distributions, and some randomness-related algorithms.")
       (git-reference
        (url "https://github.com/delehef/sylvanite")
        (commit (string-append "v" version))))
-     (sha256 (base32 "0z3ria29mjp87g5qb3c0sk4x7szarhj25zl1fmdc2x0fycgwmnrp"))))
+     (sha256 (base32 "14pyxmrp2mih6q0hmr1cbfcz7vjk49385rxqhm8z98vclsb8khdd"))))
    (build-system cargo-build-system)
    (arguments
     `(#:install-source? #f
@@ -225,6 +225,7 @@ useful types and distributions, and some randomness-related algorithms.")
       (("rust-anyhow" ,rust-anyhow-1)
        ("rust-atty" ,rust-atty-0.2)
        ("rust-buche" ,rust-buche-0.7)
+       ("rust-chainsaw" ,rust-chainsaw-1)
        ("rust-clap" ,rust-clap-3)
        ("rust-clap-verbosity-flag" ,rust-clap-verbosity-flag-1)
        ("rust-colored" ,rust-colored-2)
@@ -241,21 +242,20 @@ useful types and distributions, and some randomness-related algorithms.")
    (home-page "https://github.com/delehef/sylvanite")
    (license cecill)))
 
-(define-public chainsaw
+(define-public rust-chainsaw-1
   (package
    (name "chainsaw")
-   (version "1.9.1")
+   (version "1.11.1")
    (source
     (origin
-     (method git-fetch)
-     (uri
-      (git-reference
-       (url "https://github.com/delehef/chainsaw")
-       (commit (string-append "v" version))))
-     (sha256 (base32 "14lf95qk0663ypfk9nqrjksjbjcvb3azydg7n6ny6kw5s2752l2x"))))
+     (method url-fetch)
+     (uri (crate-uri "chainsaw" version))
+     (file-name (string-append name "-" version ".tar.gz"))
+     (sha256
+      (base32 "15a62p957pl0y1jq5j9pwynhdb6nwmbbrzrbjjm35fzcyj4nm0xd"))))
    (build-system cargo-build-system)
    (arguments
-    `(#:install-source? #f
+    `(#:skip-build? #t 
       #:cargo-inputs
       (("rust-anyhow" ,rust-anyhow-1)
        ("rust-clap" ,rust-clap-3)
