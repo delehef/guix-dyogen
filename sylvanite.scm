@@ -255,8 +255,7 @@ useful types and distributions, and some randomness-related algorithms.")
       (base32 "15a62p957pl0y1jq5j9pwynhdb6nwmbbrzrbjjm35fzcyj4nm0xd"))))
    (build-system cargo-build-system)
    (arguments
-    `(#:skip-build? #t 
-      #:cargo-inputs
+    `(#:cargo-inputs
       (("rust-anyhow" ,rust-anyhow-1)
        ("rust-clap" ,rust-clap-3)
        ("rust-itertools" ,rust-itertools-0.10)
