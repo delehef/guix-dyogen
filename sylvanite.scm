@@ -28,6 +28,24 @@
    (description "Substitution matrices for use in protein sequence analysis and alignment.")
    (license (list expat asl2.0))))
 
+(define-public rust-identity-hash-0.1
+  (package
+   (name "rust-identity-hash")
+   (version "0.1.0")
+   (source
+    (origin
+     (method url-fetch)
+     (uri (crate-uri "identity-hash" version))
+     (file-name (string-append name "-" version ".tar.gz"))
+     (sha256
+      (base32 "1nj5byyh6z6myps53qzry70ha33y4l8gwii37gqxhdh4j2m7rpfz"))))
+   (build-system cargo-build-system)
+   (arguments `(#:skip-build? #t))
+   (home-page "https://crates.io/crates/identity-hash")
+   (synopsis "Fast hash-based types for integers")
+   (description "Fast hash-based types for integers")
+   (license (list expat asl2.0))))
+
 (define-public rust-aa_name-0.1
   (package
    (name "rust-aa_name")
@@ -50,14 +68,14 @@
 (define-public rust-newick-0.7
   (package
    (name "rust-newick")
-   (version "0.7.1")
+   (version "0.7.2")
    (source
     (origin
      (method url-fetch)
      (uri (crate-uri "newick" version))
      (file-name (string-append name "-" version ".tar.gz"))
      (sha256
-      (base32 "1dzssj2n00vz7admra3m5qm181aadx7w83c1s5r70gjqdj2p2k9x"))))
+      (base32 "1d1h3ks2l3qcr44hwv15hbw5qnilqqwa5wvpdvi1q0sq41xxf1ns"))))
    (build-system cargo-build-system)
    (arguments
     `(#:skip-build? #t
@@ -74,14 +92,14 @@
 (define-public rust-sorbus-0.8
   (package
    (name "rust-sorbus")
-   (version "0.8.0")
+   (version "0.8.1")
    (source
     (origin
      (method url-fetch)
      (uri (crate-uri "sorbus" version))
      (file-name (string-append name "-" version ".tar.gz"))
      (sha256
-      (base32 "0hhv7fj136vi514c30qiy2r8gbr3hshpm3dqfdwibjsxgxvzcnkw"))))
+      (base32 "17hyrisvgpczm1ffmzlsvmpysnig9ldv6ah5vmgf1k7dr99gf5dy"))))
    (build-system cargo-build-system)
    (arguments `(#:skip-build? #t))
    (home-page "https://github.com/delehef/sorbus")
@@ -209,7 +227,7 @@ useful types and distributions, and some randomness-related algorithms.")
 (define-public sylvanite
   (package
    (name "sylvanite")
-   (version "1.5.5")
+   (version "1.5.6")
    (source
     (origin
      (method git-fetch)
@@ -217,7 +235,7 @@ useful types and distributions, and some randomness-related algorithms.")
       (git-reference
        (url "https://github.com/delehef/sylvanite")
        (commit (string-append "v" version))))
-     (sha256 (base32 "0ndvz1hnlkwsg9mcnxs61v5w6aglda2l5y7380bdrbdlp5742w5a"))))
+     (sha256 (base32 "0jw26jilfmzv2dgadb4rzwsjr22bcijb7f8fshxfxjahci7g3rkj"))))
    (build-system cargo-build-system)
    (arguments
     `(#:install-source? #f
@@ -229,6 +247,7 @@ useful types and distributions, and some randomness-related algorithms.")
        ("rust-clap" ,rust-clap-3)
        ("rust-clap-verbosity-flag" ,rust-clap-verbosity-flag-1)
        ("rust-colored" ,rust-colored-2)
+       ("rust-identity-hash" ,rust-identity-hash-0.1)
        ("rust-indicatif" ,rust-indicatif-0.16)
        ("rust-itertools" ,rust-itertools-0.10)
        ("rust-log" ,rust-log-0.4)
@@ -245,14 +264,14 @@ useful types and distributions, and some randomness-related algorithms.")
 (define-public rust-chainsaw-1
   (package
    (name "chainsaw")
-   (version "1.11.2")
+   (version "1.11.3")
    (source
     (origin
      (method url-fetch)
      (uri (crate-uri "chainsaw" version))
      (file-name (string-append name "-" version ".tar.gz"))
      (sha256
-      (base32 "0nx4p48qz0d6izd93aka3av29dqvsjwyil2qhhx0rj7k9lglq9h7"))))
+      (base32 "0vwcbvac5nw7v2fpd4n0y38g8rchhz5wp9jzp4q3blrpasxk2522"))))
    (build-system cargo-build-system)
    (arguments
     `(#:cargo-inputs
