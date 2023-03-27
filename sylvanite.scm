@@ -277,6 +277,7 @@ useful types and distributions, and some randomness-related algorithms.")
     `(#:cargo-inputs
       (("rust-anyhow" ,rust-anyhow-1)
        ("rust-clap" ,rust-clap-3)
+       ("rust-identity-hash" ,rust-identity-hash-0.1)
        ("rust-itertools" ,rust-itertools-0.10)
        ("rust-newick" ,rust-newick-0.7)
        ("rust-rusqlite" ,rust-rusqlite-0.26)
