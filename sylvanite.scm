@@ -291,7 +291,7 @@ useful types and distributions, and some randomness-related algorithms.")
 (define-public crisprs
   (package
    (name "crisprs")
-   (version "1.1.3")
+   (version "1.2.0")
    (source
     (origin
      (method git-fetch)
@@ -299,7 +299,7 @@ useful types and distributions, and some randomness-related algorithms.")
       (git-reference
        (url "https://github.com/delehef/crisprs")
        (commit (string-append "v" version))))
-     (sha256 (base32 "1dz5mhgsk29h40na5a6ps32y2jsangjzjm5ypl67izbxjknh05n1"))))
+     (sha256 (base32 "1cahfq149iljd2kha4d6mrvl053wfv1x138zk0kvi0j69vly1szf"))))
    (build-system cargo-build-system)
    (arguments
     `(#:install-source? #f
@@ -311,6 +311,7 @@ useful types and distributions, and some randomness-related algorithms.")
        ("rust-lazy-static" ,rust-lazy-static-1)
        ("rust-log" ,rust-log-0.4)
        ("rust-maplit" ,rust-maplit-1)
+       ("rust-once-cell" ,rust-once-cell-1)
        ("rust-rayon" ,rust-rayon-1)
        ("rust-smartstring" ,rust-smartstring-0.2)
        ("rust-buche" ,rust-buche-0.7))))
