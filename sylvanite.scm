@@ -198,14 +198,14 @@ useful types and distributions, and some randomness-related algorithms.")
 (define-public rust-syntesuite
   (package
    (name "rust-syntesuite")
-   (version "0.2.1")
+   (version "0.2.2")
    (source
     (origin
      (method url-fetch)
      (uri (crate-uri "syntesuite" version))
      (file-name (string-append name "-" version ".tar.gz"))
      (sha256
-      (base32 "0ljsw898b9sxwk6idir5s6l3wandimhhkc9lg6f4hrswkv43y5gk"))))
+      (base32 "0v7psq64r5jwr16x63mgh59k7y7lka4nn63lhqnsmf1mdjyix2v6"))))
    (build-system cargo-build-system)
    (arguments 
     `(#:skip-build? #t
@@ -235,7 +235,7 @@ useful types and distributions, and some randomness-related algorithms.")
       (git-reference
        (url "https://github.com/delehef/sylvanite")
        (commit (string-append "v" version))))
-     (sha256 (base32 "17qcjqmq5pv767npgks2zkzvcffrgvp079rb3j3sav258ib8i1rk"))))
+     (sha256 (base32 "0m656sy4na7d4s1i0x1pflqkvniajg1xyk94iqqwfmclnwizg6jh"))))
    (build-system cargo-build-system)
    (arguments
     `(#:install-source? #f
@@ -264,14 +264,14 @@ useful types and distributions, and some randomness-related algorithms.")
 (define-public rust-chainsaw-1
   (package
    (name "chainsaw")
-   (version "1.11.3")
+   (version "1.11.4")
    (source
     (origin
      (method url-fetch)
      (uri (crate-uri "chainsaw" version))
      (file-name (string-append name "-" version ".tar.gz"))
      (sha256
-      (base32 "0vwcbvac5nw7v2fpd4n0y38g8rchhz5wp9jzp4q3blrpasxk2522"))))
+      (base32 "0hnd5jgk7sx26knaaxpc15hclp0q24lxh9w6ch11qwdsab68mzq3"))))
    (build-system cargo-build-system)
    (arguments
     `(#:cargo-inputs
