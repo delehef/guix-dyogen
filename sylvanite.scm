@@ -65,17 +65,17 @@
    (description "Basic enum for amino acid names.")
    (license (list expat asl2.0))))
 
-(define-public rust-newick-0.7
+(define-public rust-newick-0.8
   (package
    (name "rust-newick")
-   (version "0.7.2")
+   (version "0.8.0")
    (source
     (origin
      (method url-fetch)
      (uri (crate-uri "newick" version))
      (file-name (string-append name "-" version ".tar.gz"))
      (sha256
-      (base32 "1d1h3ks2l3qcr44hwv15hbw5qnilqqwa5wvpdvi1q0sq41xxf1ns"))))
+      (base32 "07l6scbgn5hp9xhzf7ym1iljla6zhab11g3pxpz9dkv4rvbixv77"))))
    (build-system cargo-build-system)
    (arguments
     `(#:skip-build? #t
@@ -198,14 +198,14 @@ useful types and distributions, and some randomness-related algorithms.")
 (define-public rust-syntesuite
   (package
    (name "rust-syntesuite")
-   (version "0.2.2")
+   (version "0.2.4")
    (source
     (origin
      (method url-fetch)
      (uri (crate-uri "syntesuite" version))
      (file-name (string-append name "-" version ".tar.gz"))
      (sha256
-      (base32 "0v7psq64r5jwr16x63mgh59k7y7lka4nn63lhqnsmf1mdjyix2v6"))))
+      (base32 "1azrqvvz5d28nga24zsd1fyvhfyihamyqwhrgqf7jj567asgd41j"))))
    (build-system cargo-build-system)
    (arguments 
     `(#:skip-build? #t
@@ -227,7 +227,7 @@ useful types and distributions, and some randomness-related algorithms.")
 (define-public sylvanite
   (package
    (name "sylvanite")
-   (version "1.5.11")
+   (version "1.5.14")
    (source
     (origin
      (method git-fetch)
@@ -235,7 +235,7 @@ useful types and distributions, and some randomness-related algorithms.")
       (git-reference
        (url "https://github.com/delehef/sylvanite")
        (commit (string-append "v" version))))
-     (sha256 (base32 "0m656sy4na7d4s1i0x1pflqkvniajg1xyk94iqqwfmclnwizg6jh"))))
+     (sha256 (base32 "19qv7bjhcar5xap5q850i1cf2vjl2pzcfzpifvdax2rfvznv95ki"))))
    (build-system cargo-build-system)
    (arguments
     `(#:install-source? #f
@@ -251,8 +251,8 @@ useful types and distributions, and some randomness-related algorithms.")
        ("rust-indicatif" ,rust-indicatif-0.16)
        ("rust-itertools" ,rust-itertools-0.10)
        ("rust-log" ,rust-log-0.4)
-       ("rust-newick" ,rust-newick-0.7)
-       ("rust-ordered-float" ,rust-ordered-float-2)
+       ("rust-newick" ,rust-newick-0.8)
+       ("rust-ordered-float" ,rust-ordered-float-3)
        ("rust-rayon" ,rust-rayon-1)
        ("rust-syntesuite" ,rust-syntesuite))))
    (native-inputs (list sqlite))
@@ -264,14 +264,14 @@ useful types and distributions, and some randomness-related algorithms.")
 (define-public rust-chainsaw-1
   (package
    (name "chainsaw")
-   (version "1.11.4")
+   (version "1.11.6")
    (source
     (origin
      (method url-fetch)
      (uri (crate-uri "chainsaw" version))
      (file-name (string-append name "-" version ".tar.gz"))
      (sha256
-      (base32 "0hnd5jgk7sx26knaaxpc15hclp0q24lxh9w6ch11qwdsab68mzq3"))))
+      (base32 "09lywa92m1jkplg5b0f4001m2zw93zx1fkd9k1lxbn048kda4x6f"))))
    (build-system cargo-build-system)
    (arguments
     `(#:cargo-inputs
@@ -279,7 +279,7 @@ useful types and distributions, and some randomness-related algorithms.")
        ("rust-clap" ,rust-clap-3)
        ("rust-identity-hash" ,rust-identity-hash-0.1)
        ("rust-itertools" ,rust-itertools-0.10)
-       ("rust-newick" ,rust-newick-0.7)
+       ("rust-newick" ,rust-newick-0.8)
        ("rust-rusqlite" ,rust-rusqlite-0.26)
        ("rust-syntesuite" ,rust-syntesuite))))
    (native-inputs (list sqlite))
