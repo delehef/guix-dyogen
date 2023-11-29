@@ -65,41 +65,41 @@
    (description "Basic enum for amino acid names.")
    (license (list expat asl2.0))))
 
-(define-public rust-newick-0.8
+(define-public rust-newick-0.11
   (package
    (name "rust-newick")
-   (version "0.8.0")
+   (version "0.11.0")
    (source
     (origin
      (method url-fetch)
      (uri (crate-uri "newick" version))
      (file-name (string-append name "-" version ".tar.gz"))
      (sha256
-      (base32 "07l6scbgn5hp9xhzf7ym1iljla6zhab11g3pxpz9dkv4rvbixv77"))))
+      (base32 "034w2qqxpssz8agxlgva2l1dd2s40j4lsl7xx0qihlxd49qad6np"))))
    (build-system cargo-build-system)
    (arguments
     `(#:skip-build? #t
       #:cargo-inputs
       (("rust-pest" ,rust-pest-2)
        ("rust-pest-derive" ,rust-pest-derive-2)
-       ("rust-sorbus" ,rust-sorbus-0.8)
+       ("rust-sorbus" ,rust-sorbus-0.12)
        ("rust-thiserror" ,rust-thiserror-1))))
    (home-page "https://github.com/delehef/newick")
    (synopsis "Parse, manipulate & write newick-formatted phylogenetic tree")
    (description "A library to read, edit and write newick-formatted trees in rust")
    (license cecill-c)))
 
-(define-public rust-sorbus-0.8
+(define-public rust-sorbus-0.12
   (package
    (name "rust-sorbus")
-   (version "0.8.1")
+   (version "0.12.0")
    (source
     (origin
      (method url-fetch)
      (uri (crate-uri "sorbus" version))
      (file-name (string-append name "-" version ".tar.gz"))
      (sha256
-      (base32 "17hyrisvgpczm1ffmzlsvmpysnig9ldv6ah5vmgf1k7dr99gf5dy"))))
+      (base32 "1y79vr3cqsiim6siqfq8ij8dz3w2xcdwlz5dpkzjwigaph12k8nl"))))
    (build-system cargo-build-system)
    (arguments `(#:skip-build? #t))
    (home-page "https://github.com/delehef/sorbus")
@@ -159,53 +159,24 @@
     `(#:skip-build? #t
       #:cargo-inputs
       (("rust-clap" ,rust-clap-3)
-       ("rust-rand" ,rust-rand-0.8.5)
+       ("rust-rand" ,rust-rand-0.8)
        ("rust-iterrools" ,rust-itertools-0.10))))
    (home-page "https://github.com/delehef/buche")
    (synopsis "Logger that logs to stderr based on verbosity specified")
    (description "A fork of stderrlog, a logger that aims to provide a simple case of env_logger that just logs to stderr based on verbosity.")
    (license cecill-c)))
 
- (define-public rust-rand-0.8.5
-  (package
-    (name "rust-rand")
-    (version "0.8.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (crate-uri "rand" version))
-       (file-name (string-append name "-" version ".tar.gz"))
-       (sha256
-        (base32 "013l6931nn7gkc23jz5mm3qdhf93jjf0fg64nz2lp4i51qd8vbrl"))))
-    (build-system cargo-build-system)
-    (arguments
-     `(#:skip-build? #t
-       #:cargo-inputs
-       (("rust-libc" ,rust-libc-0.2)
-        ("rust-log" ,rust-log-0.4)
-        ("rust-packed-simd-2" ,rust-packed-simd-2-0.3)
-        ("rust-rand-chacha" ,rust-rand-chacha-0.3)
-        ("rust-rand-core" ,rust-rand-core-0.6)
-        ("rust-rand-hc" ,rust-rand-hc-0.3)
-        ("rust-serde" ,rust-serde-1))))
-    (home-page "https://crates.io/crates/rand")
-    (synopsis "Random number generators and other randomness functionality")
-    (description
-     "Rand provides utilities to generate random numbers, to convert them to
-useful types and distributions, and some randomness-related algorithms.")
-    (license (list expat asl2.0))))
-
 (define-public rust-syntesuite
   (package
    (name "rust-syntesuite")
-   (version "0.2.4")
+   (version "0.4.0")
    (source
     (origin
      (method url-fetch)
      (uri (crate-uri "syntesuite" version))
      (file-name (string-append name "-" version ".tar.gz"))
      (sha256
-      (base32 "1azrqvvz5d28nga24zsd1fyvhfyihamyqwhrgqf7jj567asgd41j"))))
+      (base32 "0mp605hj7g8j1h4pmp3ancmn47j30ipj8jwqa0q6f2wscqlzkxns"))))
    (build-system cargo-build-system)
    (arguments 
     `(#:skip-build? #t
@@ -227,7 +198,7 @@ useful types and distributions, and some randomness-related algorithms.")
 (define-public sylvanite
   (package
    (name "sylvanite")
-   (version "1.5.14")
+   (version "1.6.2")
    (source
     (origin
      (method git-fetch)
@@ -235,7 +206,7 @@ useful types and distributions, and some randomness-related algorithms.")
       (git-reference
        (url "https://github.com/delehef/sylvanite")
        (commit (string-append "v" version))))
-     (sha256 (base32 "19qv7bjhcar5xap5q850i1cf2vjl2pzcfzpifvdax2rfvznv95ki"))))
+     (sha256 (base32 "0lchksvjyz546iv8080a06rrkix4apdbg8s476x75r4lmxxf851i"))))
    (build-system cargo-build-system)
    (arguments
     `(#:install-source? #f
@@ -251,7 +222,7 @@ useful types and distributions, and some randomness-related algorithms.")
        ("rust-indicatif" ,rust-indicatif-0.16)
        ("rust-itertools" ,rust-itertools-0.10)
        ("rust-log" ,rust-log-0.4)
-       ("rust-newick" ,rust-newick-0.8)
+       ("rust-newick" ,rust-newick-0.11)
        ("rust-ordered-float" ,rust-ordered-float-3)
        ("rust-rayon" ,rust-rayon-1)
        ("rust-syntesuite" ,rust-syntesuite))))
@@ -264,14 +235,14 @@ useful types and distributions, and some randomness-related algorithms.")
 (define-public rust-chainsaw-1
   (package
    (name "chainsaw")
-   (version "1.11.6")
+   (version "1.14.2")
    (source
     (origin
      (method url-fetch)
      (uri (crate-uri "chainsaw" version))
      (file-name (string-append name "-" version ".tar.gz"))
      (sha256
-      (base32 "09lywa92m1jkplg5b0f4001m2zw93zx1fkd9k1lxbn048kda4x6f"))))
+      (base32 "02vgqf23zymgrbks7bn076dh02lk6iy4zclg041882m4mkbnyy4g"))))
    (build-system cargo-build-system)
    (arguments
     `(#:cargo-inputs
@@ -279,7 +250,7 @@ useful types and distributions, and some randomness-related algorithms.")
        ("rust-clap" ,rust-clap-3)
        ("rust-identity-hash" ,rust-identity-hash-0.1)
        ("rust-itertools" ,rust-itertools-0.10)
-       ("rust-newick" ,rust-newick-0.8)
+       ("rust-newick" ,rust-newick-0.11)
        ("rust-rusqlite" ,rust-rusqlite-0.26)
        ("rust-syntesuite" ,rust-syntesuite))))
    (native-inputs (list sqlite))
